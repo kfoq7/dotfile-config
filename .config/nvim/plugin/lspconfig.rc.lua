@@ -97,3 +97,5 @@ nvim_lsp.pyright.setup {
   },
   single_file_support = true
 }
+
+nvim_lsp.arduino_language_server.setup {}
