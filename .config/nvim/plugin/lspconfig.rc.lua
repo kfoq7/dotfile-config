@@ -58,7 +58,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 nvim_lsp.tsserver.setup {
   on_attach = on_attach,
-  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+  filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
   cmd = { 'typescript-language-server.cmd', "--stdio" },
   capabilities = capabilities
 }
@@ -81,4 +81,19 @@ nvim_lsp.lua_ls.setup {
       }
     }
   }
+}
+
+nvim_lsp.pyright.setup {
+  filetype = { "python" },
+  cmd = { "pyright-langserver.cmd", "--stdio" },
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = "workspace",
+        useLibraryCodeForTypes = true
+      }
+    }
+  },
+  single_file_support = true
 }
