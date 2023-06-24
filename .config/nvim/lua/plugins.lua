@@ -44,4 +44,6 @@ packer.startup(function(use)
   use 'dinhhuy258/git.nvim' -- For git blame & browser
 
   use 'andweeb/presence.nvim' -- Display `Discord presence`
+
+  use 'axelvc/template-string.nvim' -- Template string convert
 end)
