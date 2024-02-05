@@ -1,6 +1,128 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "version": 2,
+  "version": 1,
   "osc99": true,
-  "blocks": []
+  "blocks": [
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#00bd9c",
+          "properties": {
+            "display_host": true
+          },
+          "style": "diamond",
+          "template": "{{ .UserName }} ",
+          "type": "session"
+        },
+        {
+          "foreground": "#dbd4cd",
+          "style": "diamond",
+          "template": "<#dbd4cd>\uf489</> {{ .Name }}",
+          "type": "shell"
+        },
+        {
+          "foreground": "#dab0da",
+          "properties": {
+            "branch_icon": "\ue725 ",
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "fetch_worktree_count": true
+          },
+          "style": "diamond",
+          "template": " <#fff>{{ .UpstreamIcon }}</>git:(<#d8b75c>{{ .HEAD }}</>){{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
+          "type": "git"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "right",
+      "segments": [
+        {
+          "foreground": "#68A063",
+          "style": "diamond",
+          "template": " <#68A063>\ue718</> {{ if .PackageManagerIcon }}{{ .PackageManagerIcon }} {{ end }}{{ .Full }} ",
+          "type": "node"
+        },
+        {
+          "foreground": "#fff",
+          "style": "plain",
+          "type": "text"
+        },
+        {
+          "foreground": "#fff",
+          "properties": {
+            "style": "dallas",
+            "threshold": 0
+          },
+          "style": "diamond",
+          "template": " <#BBC4B9>{{ .FormattedMs }}s</> <#fff>\udb80\udddd</>",
+          "type": "executiontime"
+        },
+        {
+          "foreground": "#BBC4B9",
+          "properties": {
+            "time_format": "Monday <#fff>at</> 3:04 PM"
+          },
+          "style": "diamond",
+          "template": " {{ .CurrentDate | date .Format }} ",
+          "type": "time"
+        },
+        {
+          "properties": {
+            "root_icon": "\uf292 "
+          },
+          "style": "diamond",
+          "template": " \uf0e7",
+          "type": "root"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "style": "plain",
+          "foreground": "#5A6374",
+          "template": " \uf292 ",
+          "type": "root"
+        },
+        {
+          "foreground": "#5A6374",
+          "properties": {
+            "style": "agnoster_full",
+            "home_icon": "~"
+          },
+          "style": "plain",
+          "template": "{{ .Path }}",
+          "type": "path"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#ece4d5",
+          "style": "plain",
+          "template": "\u276f ",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "console_title_template": "{{ .Folder }}",
+  "transient_prompt": {
+    "background": "transparent",
+    "foreground": "#FEF5ED",
+    "template": "\ue285 "
+  }
 }
