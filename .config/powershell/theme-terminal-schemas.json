@@ -44,6 +44,29 @@
       "selectionBackground": "#3E404A",
       "white": "#F1F1F0",
       "yellow": "#F3F99D"
+    },
+    {
+      "background": "#16161E",
+      "black": "#363B54",
+      "blue": "#7AA2F7",
+      "brightBlack": "#363B54",
+      "brightBlue": "#7AA2F7",
+      "brightCyan": "#7DCFFF",
+      "brightGreen": "#41A6B5",
+      "brightPurple": "#BB9AF7",
+      "brightRed": "#F7768E",
+      "brightWhite": "#FFFFFF",
+      "brightYellow": "#E5C07B",
+      "cursorColor": "#FFFFFF",
+      "cyan": "#7DCFFF",
+      "foreground": "#D2D3D8",
+      "green": "#41A6B5",
+      "name": "TokyoNight",
+      "purple": "#BB9AF7",
+      "red": "#F7768E",
+      "selectionBackground": "#FFFFFF",
+      "white": "#F1F1F1",
+      "yellow": "#E5C07B"
     }
   ]
 }
