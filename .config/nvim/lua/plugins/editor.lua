@@ -1,6 +1,6 @@
 return {
   {
-    "telescope.nvim",
+    "nvim-telescope/telescope.nvim",
     dependencies = {
       {
         "nvim-telescope/telescope-fzf-native.nvim",
@@ -107,11 +107,13 @@ return {
       local actions = require("telescope.actions")
       local fb_actions = require("telescope").extensions.file_browser.actions
 
+      opts.defaults = opts.defaults or {}
+
       opts.defaults = vim.tbl_deep_extend("force", opts.defaults, {
         wrap_results = true,
         layout_strategy = "horizontal",
         layout_config = { prompt_position = "top" },
-        sorting_strategy = "ascending",
+        sorting_startegy = "ascending",
         winblend = 0,
         mappings = {
           n = {},
@@ -161,5 +163,47 @@ return {
       require("telescope").load_extension("file_browser")
     end,
   },
-  { "folke/flash.nvim", enabled = false },
+
+  {
+    "saghen/blink.cmp",
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
+    opts = {
+      completion = {
+        ghost_text = {
+          enabled = false,
+        },
+        accept = {
+          auto_brackets = {
+            enabled = false,
+          },
+        },
+        menu = {
+          enabled = true,
+          border = "none",
+          winblend = 0,
+          draw = {
+            treesitter = { "lsp" },
+          },
+        },
+        documentation = {
+          window = {
+            border = "rounded",
+            winblend = 0,
+          },
+        },
+      },
+      signature = {
+        window = {
+          border = "none",
+          winblend = 0,
+        },
+      },
+      keymap = {
+        ["<C-l>"] = { "show", "show_documentation", "hide_documentation" },
+        ["<C-p>"] = { "select_prev", "fallback" },
+        ["<C-n>"] = { "select_next", "fallback" },
+      },
+    },
+  },
 }

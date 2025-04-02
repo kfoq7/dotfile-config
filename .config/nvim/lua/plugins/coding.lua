@@ -4,24 +4,25 @@ return {
     cmd = "IncRename",
     config = true,
   },
-  {
-    "nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji" },
-    opts = function(_, opts)
-      table.insert(opts.sources, { name = "emoji" })
 
-      local cmp = require("cmp")
-
-      cmp.setup({
-        snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
-        },
-        window = {
-          completion = { border = "none", winblend = 0 },
-        },
-      })
-    end,
-  },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   dependencies = { "hrsh7th/cmp-emoji" },
+  --   opts = function(_, opts)
+  --     -- Add emoji source
+  --     table.insert(opts.sources, { name = "emoji" })
+  --
+  --     -- Snippet expansion (keep this if you're using snippets)
+  --     opts.snippet = {
+  --       expand = function(args)
+  --         require("luasnip").lsp_expand(args.body)
+  --       end,
+  --     }
+  --
+  --     -- Window styling (keep this if you want)
+  --     opts.window = {
+  --       completion = { border = "none", winblend = 0 },
+  --     }
+  --   end,
+  -- },
 }

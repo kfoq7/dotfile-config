@@ -24,3 +24,10 @@ Gemfile.lock
 node_modules
 bower_components
 fishd.*
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+data

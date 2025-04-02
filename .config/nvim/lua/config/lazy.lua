@@ -28,6 +28,7 @@ require("lazy").setup({
         },
       },
     },
+    -- import/override with your plugins
     { import = "lazyvim.plugins.extras.linting.eslint" },
     { import = "lazyvim.plugins.extras.formatting.prettier" },
     { import = "lazyvim.plugins.extras.lang.rust" },
@@ -35,9 +36,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.json" },
     { import = "lazyvim.plugins.extras.lang.tailwind" },
     { import = "lazyvim.plugins.extras.lang.astro" },
-    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
-    { import = "lazyvim.plugins.extras.util.mini-hipatterns" },
-    -- import/override with your plugins
     { import = "plugins" },
   },
   defaults = {
@@ -55,16 +53,13 @@ require("lazy").setup({
     notify = false, -- notify on update
   }, -- automatically check for plugin updates
   performance = {
-    cache = {
-      enabled = true,
-    },
     rtp = {
       -- disable some rtp plugins
       disabled_plugins = {
         "gzip",
         -- "matchit",
         -- "matchparen",
-        "netrwPlugin",
+        -- "netrwPlugin",
         "tarPlugin",
         "tohtml",
         "tutor",
@@ -72,12 +67,4 @@ require("lazy").setup({
       },
     },
   },
-  ui = {
-    custom_keys = {
-      ["<localleader>d"] = function(plugin)
-        dd(plugin)
-      end,
-    },
-  },
-  debug = false,
 })
